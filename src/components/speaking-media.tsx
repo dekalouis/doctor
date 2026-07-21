@@ -1,4 +1,4 @@
-import { Placeholder, PlaceholderDark } from "./placeholder";
+import Image from "next/image";
 
 const speakingStats = [
   { value: "200+", label: "Events" },
@@ -7,9 +7,24 @@ const speakingStats = [
 ];
 
 const media = [
-  { brand: "Forbes", title: "The Visionary Surgeon" },
-  { brand: "Bazaar", title: "Beauty, Reimagined" },
-  { brand: "Podcast", title: "The Future of Aesthetic Medicine" },
+  {
+    brand: "Forbes",
+    title: "The Visionary Surgeon",
+    image: "/gallery/media-forbes.jpg",
+    alt: "Editorial portrait of Dr. Danu",
+  },
+  {
+    brand: "Bazaar",
+    title: "Beauty, Reimagined",
+    image: "/gallery/media-bazaar.jpg",
+    alt: "Editorial portrait of Dr. Danu",
+  },
+  {
+    brand: "Podcast",
+    title: "The Future of Aesthetic Medicine",
+    image: "/gallery/media-podcast.jpg",
+    alt: "Editorial portrait of Dr. Danu",
+  },
 ];
 
 export function SpeakingMedia() {
@@ -39,7 +54,15 @@ export function SpeakingMedia() {
             ))}
           </div>
 
-          <Placeholder className="my-6 aspect-[16/10] w-full" />
+          <div className="relative my-6 aspect-[16/10] w-full">
+            <Image
+              src="/gallery/speaking-stage.jpg"
+              alt="Dr. Danu speaking on stage with a microphone at a medical congress"
+              fill
+              sizes="(min-width: 1024px) 56vw, 100vw"
+              className="object-cover object-top"
+            />
+          </div>
 
           <a
             href="#speaking"
@@ -62,7 +85,14 @@ export function SpeakingMedia() {
           <div className="mb-6 grid grid-cols-3 gap-3">
             {media.map((m) => (
               <div key={m.brand} className="relative aspect-[3/4]">
-                <PlaceholderDark className="absolute inset-0" />
+                <Image
+                  src={m.image}
+                  alt={m.alt}
+                  fill
+                  sizes="(min-width: 1024px) 13vw, 30vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/30" />
                 <div className="absolute inset-0 flex flex-col justify-between p-3 text-white">
                   <span className="font-serif text-[0.9rem] leading-none">
                     {m.brand}

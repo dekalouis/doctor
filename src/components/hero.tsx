@@ -14,6 +14,7 @@ export function Hero() {
             sizes="(min-width: 1024px) 46vw, 100vw"
             className="object-cover object-top"
           />
+          <div className="absolute inset-y-0 left-0 hidden w-1/4 bg-gradient-to-r from-dark to-transparent lg:block" />
           <div className="absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-r from-transparent to-dark lg:block" />
           <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark to-transparent sm:hidden" />
         </div>

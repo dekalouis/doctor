@@ -1,29 +1,41 @@
-import { PlaceholderDark } from "./placeholder";
+import Image from "next/image";
 
 const projects = [
   {
     title: "The Clinic Beautyphosopy",
     desc: "Aesthetic excellence and holistic beauty.",
+    image: "/gallery/clinic-beautyphosopy.jpg",
+    alt: "Dr. Danu with an aesthetic device at The Clinic Beautyphosopy",
   },
   {
     title: "Healthcare Ventures",
     desc: "Investing in the future of healthcare.",
+    image: "/gallery/healthcare-ventures.jpg",
+    alt: "Dr. Danu at his office desk",
   },
   {
     title: "BOSUCKE",
     desc: "Bespoke Beauty Magazine — inspiring through stories and experts.",
+    image: "/gallery/bosucke-magazine.jpg",
+    alt: "Editorial portrait of Dr. Danu in a lounge setting",
   },
   {
     title: "Medical Congresses",
     desc: "Bringing knowledge and experts together.",
+    image: "/gallery/medical-congresses.jpg",
+    alt: "Dr. Danu seated at his desk",
   },
   {
     title: "Education Programs",
     desc: "Training the next generation.",
+    image: "/gallery/education-programs.jpg",
+    alt: "Dr. Danu at his office desk",
   },
   {
     title: "Research & Innovation",
     desc: "Advancing science for better outcomes.",
+    image: "/gallery/research-innovation.jpg",
+    alt: "Dr. Danu with an EMFACE aesthetic device",
   },
 ];
 
@@ -55,7 +67,14 @@ export function Projects() {
           {projects.map((p) => (
             <div key={p.title} className="group relative aspect-[3/4]">
               <div className="absolute inset-0 origin-bottom transition-all duration-300 ease-out group-hover:-translate-y-2 group-hover:scale-[1.06] group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)]">
-                <PlaceholderDark className="absolute inset-0" />
+                <Image
+                  src={p.image}
+                  alt={p.alt}
+                  fill
+                  sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
                 <div className="absolute inset-0 flex flex-col justify-end gap-1.5 p-5">
                   <h4 className="text-[0.85rem] font-medium">{p.title}</h4>
                   <p className="text-[0.75rem] text-muted transition-opacity duration-300 group-hover:text-white/80">
