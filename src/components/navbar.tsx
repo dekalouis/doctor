@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 import { navLinks } from "./nav-links";
 
 export function Navbar() {
@@ -18,18 +19,19 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 backdrop-blur-md transition-colors duration-300 ${
         solid
           ? "bg-cream border-b border-black/10"
-          : "border-b border-transparent"
+          : "bg-black/20 border-b border-white/10"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-8">
         <a
           href="#hero"
-          className={`font-serif text-[1.05rem] ${solid ? "text-ink" : "text-white"}`}
+          className={`min-w-0 truncate font-serif text-[0.9rem] sm:text-[1.05rem] ${solid ? "text-ink" : "text-white"}`}
         >
-          dr. Danu Mahandaru, <span className="font-normal">Sp.BP-RE</span>
+          dr. Danu Mahandaru,{" "}
+          <span className="font-normal">Sp.BP-RE</span>
         </a>
 
         <nav
@@ -44,7 +46,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-5">
+        <div className="flex shrink-0 items-center gap-3 sm:gap-5">
           <a
             href="#contact"
             className={`hidden border px-6 py-2.5 text-[0.75rem] tracking-wide uppercase hover:opacity-70 md:inline-block ${
@@ -54,19 +56,24 @@ export function Navbar() {
             Book Consultation
           </a>
           <button
-            aria-label="Toggle menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="flex h-8 w-8 flex-col justify-center gap-[5px] lg:hidden"
+            className={`-mr-2 flex h-10 w-10 items-center justify-center rounded-full lg:hidden ${
+              solid ? "text-ink" : "text-white"
+            }`}
           >
-            <span className={`block h-[1.5px] w-full ${solid ? "bg-ink" : "bg-white"}`} />
-            <span className={`block h-[1.5px] w-full ${solid ? "bg-ink" : "bg-white"}`} />
-            <span className={`block h-[1.5px] w-full ${solid ? "bg-ink" : "bg-white"}`} />
+            {open ? (
+              <X className="h-5 w-5" strokeWidth={1.5} />
+            ) : (
+              <Menu className="h-5 w-5" strokeWidth={1.5} />
+            )}
           </button>
         </div>
       </div>
 
       {open && (
-        <nav className="fixed inset-x-0 top-20 bottom-0 z-40 flex flex-col gap-6 bg-dark p-8">
+        <nav className="fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col gap-6 overflow-y-auto bg-dark p-8 sm:top-20">
           {navLinks.map((link) => (
             <a
               key={link.href}

@@ -15,7 +15,7 @@ const media = [
 export function SpeakingMedia() {
   return (
     <section id="speaking" className="bg-cream py-20 lg:py-28">
-      <div className="mx-auto grid max-w-[1280px] gap-16 px-6 lg:grid-cols-[1.3fr_1fr] lg:px-8">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-12 px-6 lg:grid-cols-[1.3fr_1fr] lg:gap-16 lg:px-8">
         <div>
           <p className="mb-3 text-[0.7rem] tracking-[0.15em] text-tan-dark uppercase">
             Speaking

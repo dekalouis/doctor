@@ -19,7 +19,7 @@ const timeline = [
 export function About() {
   return (
     <section id="about" className="bg-cream py-20 lg:py-28">
-      <div className="mx-auto grid max-w-[1280px] gap-12 px-6 lg:grid-cols-[1fr_280px_1fr] lg:px-8">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-12 px-6 lg:grid-cols-[1fr_280px_1fr] lg:px-8">
         <div>
           <p className="mb-3 text-[0.7rem] tracking-[0.15em] text-tan-dark uppercase">
             About Dr. Danu
@@ -71,9 +71,9 @@ export function About() {
           <p className="mt-8 mb-5 text-[0.7rem] tracking-[0.15em] text-tan-dark uppercase">
             Career Journey
           </p>
-          <div className="grid grid-cols-5 gap-3">
+          <div className="-mx-6 flex gap-5 overflow-x-auto px-6 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-5 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0 [&::-webkit-scrollbar]:hidden">
             {timeline.map((t) => (
-              <div key={t.year} className="flex flex-col gap-2">
+              <div key={t.year} className="flex w-[120px] shrink-0 flex-col gap-2 sm:w-auto">
                 <span className="font-serif text-[1rem]">{t.year}</span>
                 <span className="text-[0.68rem] leading-snug text-muted">{t.desc}</span>
               </div>
