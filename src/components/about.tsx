@@ -47,7 +47,8 @@ export function About() {
 
         <div className="relative aspect-[3/4] w-full max-w-[280px] justify-self-center">
           <Image
-            src="/JNT01422.jpg"
+            // src="/JNT01422.jpg"
+            src="/gallery/medical-congresses.jpg"
             alt="dr. Danu Mahandaru, Sp.BP-RE"
             fill
             sizes="280px"

@@ -57,6 +57,7 @@ export function SpeakingMedia() {
           <div className="relative my-6 aspect-[16/10] w-full">
             <Image
               src="/gallery/speaking-stage.jpg"
+              loading="eager"
               alt="Dr. Danu speaking on stage with a microphone at a medical congress"
               fill
               sizes="(min-width: 1024px) 56vw, 100vw"

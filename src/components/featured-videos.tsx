@@ -44,8 +44,8 @@ export function FeaturedVideos() {
   return (
     <section id="insights" className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
-          <div>
+        <div className="lg:flex lg:items-start lg:gap-10">
+          <div className="mb-8 lg:mb-0 lg:w-[200px] lg:shrink-0">
             <p className="mb-3 text-[0.7rem] tracking-[0.15em] text-tan-dark uppercase">
               Featured Videos
             </p>
@@ -55,39 +55,39 @@ export function FeaturedVideos() {
                 Inspiration.
               </em>
             </h2>
+            <a
+              href="#insights"
+              className="mt-5 inline-block border-b border-ink pb-0.5 text-[0.8rem] tracking-wide uppercase"
+            >
+              See All Videos &rarr;
+            </a>
           </div>
-          <a
-            href="#insights"
-            className="border-b border-ink pb-0.5 text-[0.8rem] tracking-wide uppercase"
-          >
-            See All Videos &rarr;
-          </a>
-        </div>
 
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
-          {videos.map((v) => (
-            <div key={v.title} className="group">
-              <div className="relative mb-3 aspect-[4/5] overflow-visible">
-                <div className="absolute inset-0 origin-bottom transition-all duration-300 ease-out group-hover:-translate-y-2 group-hover:scale-[1.06] group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)]">
-                  <Image
-                    src={v.image}
-                    alt={v.alt}
-                    fill
-                    sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/20" />
-                  <span className="absolute inset-0 flex items-center justify-center">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/70">
-                      <Play className="ml-0.5 h-3.5 w-3.5 fill-white text-white" strokeWidth={0} />
+          <div className="grid flex-1 grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+            {videos.map((v) => (
+              <div key={v.title} className="group">
+                <div className="relative mb-3 aspect-[4/5] overflow-visible">
+                  <div className="absolute inset-0 origin-bottom transition-all duration-300 ease-out group-hover:-translate-y-2 group-hover:scale-[1.06] group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)]">
+                    <Image
+                      src={v.image}
+                      alt={v.alt}
+                      fill
+                      sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/20" />
+                    <span className="absolute inset-0 flex items-center justify-center">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/70">
+                        <Play className="ml-0.5 h-3.5 w-3.5 fill-white text-white" strokeWidth={0} />
+                      </span>
                     </span>
-                  </span>
+                  </div>
                 </div>
+                <h4 className="mb-1 text-[0.9rem] font-normal">{v.title}</h4>
+                <p className="text-[0.75rem] text-muted">{v.desc}</p>
               </div>
-              <h4 className="mb-1 text-[0.9rem] font-normal">{v.title}</h4>
-              <p className="text-[0.75rem] text-muted">{v.desc}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
